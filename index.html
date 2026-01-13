@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil Gamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .profile {
+      text-align: center;
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffd700;
+    }
+    .upload {
+      margin-top: 10px;
+    }
+    h1 {
+      margin: 20px 0 5px;
+      font-size: 36px;
+    }
+    .badge {
+      display: inline-block;
+      background: #ffd700;
+      color: #000;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .subtitle {
+      color: #aaa;
+      margin-top: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+    .card {
+      background: #141414;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+    .card p {
+      padding: 12px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img id="avatar" class="avatar" src="https://via.placeholder.com/300x300.png?text=Sua+Foto" alt="Avatar" />
+      <div class="upload">
+        <input type="file" accept="image/*" onchange="loadImage(event)">
+      </div>
+      <h1>SEU NOME</h1>
+      <span class="badge">PRO PLAYER</span>
+      <p class="subtitle">Brasil • Perfil Gamer / Streamer</p>
+    </div>
+
+    <div class="gallery">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Modelo feminina" />
+        <p>Imagem temática – modelo feminina russa (exemplo)</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Modelo feminina" />
+        <p>Imagem temática – estilo e-sports</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91" alt="Modelo feminina" />
+        <p>Imagem temática – background visual</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadImage(event) {
+      const avatar = document.getElementById('avatar');
+      avatar.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>
